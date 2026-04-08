@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Delano Fernando</title>
   <meta name="description" content="Marketing Operations specialist. I connect systems, automate workflows, and turn data into decisions that move revenue forward." />
+  <link rel="icon" type="image/x-icon" href="https://www.delanofernando.com/images/favicons/AF%20Transparent%20Favicon.ico" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://www.delanofernando.com/images/favicons/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://www.delanofernando.com/images/favicons/favicon-32x32.png" />
+  <link rel="apple-touch-icon" href="https://www.delanofernando.com/images/favicons/apple-touch-icon.png" />
+  <meta property="og:image" content="https://www.delanofernando.com/images/favicons/android-chrome-512x512.png" />
+  <meta property="og:title" content="Delano Fernando" />
+  <meta property="og:description" content="Marketing Operations specialist. I connect systems, automate workflows, and turn data into decisions that move revenue forward." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
@@ -57,11 +64,21 @@
     }
 
     .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.95rem;
       color: var(--accent);
       text-decoration: none;
       letter-spacing: -0.02em;
+    }
+    .nav-logo img {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      object-fit: cover;
+      opacity: 0.9;
     }
     .nav-logo span { color: var(--text3); }
 
@@ -424,7 +441,10 @@
 <canvas id="bg-canvas"></canvas>
 
 <nav>
-  <a href="#hero" class="nav-logo">delano<span>.fernando</span></a>
+  <a href="#hero" class="nav-logo">
+    <img src="https://www.delanofernando.com/images/favicons/android-chrome-192x192.png" alt="Delano Fernando" />
+    delano<span>.fernando</span>
+  </a>
   <ul class="nav-links">
     <li><a href="#impact">Impact</a></li>
     <li><a href="#stack">Stack</a></li>
