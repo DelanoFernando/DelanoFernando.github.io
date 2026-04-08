@@ -4,43 +4,45 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Delano Fernando</title>
+  <meta name="description" content="Marketing Operations specialist. I connect systems, automate workflows, and turn data into decisions that move revenue forward." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #060a10;
-      --bg2: #0d1117;
-      --bg3: #161b22;
-      --border: #21262d;
-      --accent: #58a6ff;
-      --accent2: #3fb950;
-      --accent3: #f78166;
-      --purple: #bc8cff;
-      --text: #e6edf3;
-      --text2: #8b949e;
-      --text3: #6e7681;
+      --bg:      #060a10;
+      --bg2:     #0d1117;
+      --bg3:     #161b22;
+      --bg4:     #1c2230;
+      --border:  #21262d;
+      --accent:  #58a6ff;
+      --green:   #3fb950;
+      --orange:  #f78166;
+      --purple:  #bc8cff;
+      --text:    #e6edf3;
+      --text2:   #8b949e;
+      --text3:   #484f58;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-
     body {
       background: var(--bg);
       color: var(--text);
       font-family: 'Inter', sans-serif;
       overflow-x: hidden;
+      line-height: 1.6;
     }
 
-    /* CANVAS BACKGROUND */
+    /* ── CANVAS ── */
     #bg-canvas {
       position: fixed;
       inset: 0;
       z-index: 0;
-      opacity: 0.4;
+      opacity: 0.35;
+      pointer-events: none;
     }
 
-    /* NAV */
+    /* ── NAV ── */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -48,360 +50,290 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.2rem 2rem;
-      background: rgba(6, 10, 16, 0.8);
-      backdrop-filter: blur(12px);
+      padding: 1rem 2.5rem;
+      background: rgba(6,10,16,0.85);
+      backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border);
     }
 
     .nav-logo {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 1rem;
+      font-size: 0.95rem;
       color: var(--accent);
       text-decoration: none;
+      letter-spacing: -0.02em;
     }
+    .nav-logo span { color: var(--text3); }
 
-    .nav-logo span { color: var(--text2); }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a {
       color: var(--text2);
       text-decoration: none;
-      font-size: 0.875rem;
+      font-size: 0.8rem;
       font-weight: 500;
+      letter-spacing: 0.03em;
       transition: color 0.2s;
     }
-
     .nav-links a:hover { color: var(--text); }
 
-    /* SECTIONS */
-    section {
-      position: relative;
-      z-index: 1;
+    /* ── SECTIONS ── */
+    section { position: relative; z-index: 1; }
+
+    .inner {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 2rem;
     }
 
-    /* HERO */
+    /* ── HERO ── */
     #hero {
       min-height: 100vh;
       display: flex;
       align-items: center;
       padding: 8rem 2rem 4rem;
-      max-width: 900px;
-      margin: 0 auto;
     }
 
-    .hero-inner {
-      width: 100%;
-    }
-
-    .hero-eyebrow {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.875rem;
-      color: var(--accent2);
-      margin-bottom: 1.5rem;
-      display: flex;
+    .hero-tag {
+      display: inline-flex;
       align-items: center;
       gap: 0.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--green);
+      margin-bottom: 1.75rem;
+      letter-spacing: 0.04em;
     }
-
-    .hero-eyebrow::before {
+    .hero-tag::before {
       content: '';
-      display: inline-block;
-      width: 2rem;
+      display: block;
+      width: 1.75rem;
       height: 1px;
-      background: var(--accent2);
+      background: var(--green);
     }
 
     h1 {
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-size: clamp(2.8rem, 6vw, 5rem);
       font-weight: 700;
-      line-height: 1.1;
-      margin-bottom: 0.5rem;
-      letter-spacing: -0.02em;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
     }
+    .accent { color: var(--accent); }
 
-    .name-accent { color: var(--accent); }
-
-    .hero-subtitle {
-      font-size: clamp(1.2rem, 3vw, 1.8rem);
-      font-weight: 400;
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.35rem);
       color: var(--text2);
+      font-weight: 400;
       margin-bottom: 1.5rem;
-      min-height: 2.5rem;
+      min-height: 2rem;
     }
-
     .cursor {
       display: inline-block;
       width: 2px;
-      height: 1.2em;
+      height: 1em;
       background: var(--accent);
       margin-left: 2px;
       vertical-align: middle;
       animation: blink 1s step-end infinite;
     }
-
     @keyframes blink { 50% { opacity: 0; } }
 
     .hero-desc {
       font-size: 1rem;
       color: var(--text2);
-      line-height: 1.7;
-      max-width: 600px;
+      max-width: 580px;
+      line-height: 1.75;
       margin-bottom: 2.5rem;
     }
 
-    .hero-cta {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
+    .hero-cta { display: flex; gap: 0.75rem; flex-wrap: wrap; }
 
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.75rem 1.5rem;
+      gap: 0.45rem;
+      padding: 0.7rem 1.4rem;
       border-radius: 8px;
-      font-size: 0.875rem;
+      font-size: 0.85rem;
       font-weight: 600;
       text-decoration: none;
       transition: all 0.2s;
-      cursor: pointer;
+      letter-spacing: 0.01em;
     }
-
     .btn-primary {
       background: var(--accent);
       color: #000;
       border: 1px solid var(--accent);
     }
-
     .btn-primary:hover {
       background: #79b8ff;
+      box-shadow: 0 6px 20px rgba(88,166,255,0.25);
       transform: translateY(-1px);
-      box-shadow: 0 8px 24px rgba(88, 166, 255, 0.2);
     }
-
     .btn-ghost {
       background: transparent;
-      color: var(--text);
+      color: var(--text2);
       border: 1px solid var(--border);
     }
-
     .btn-ghost:hover {
-      border-color: var(--text2);
+      color: var(--text);
+      border-color: var(--text3);
       transform: translateY(-1px);
     }
 
-    /* DIVIDER */
-    .section-divider {
-      max-width: 900px;
+    /* ── DIVIDER ── */
+    .divider {
+      max-width: 920px;
       margin: 0 auto;
       padding: 0 2rem;
       border-top: 1px solid var(--border);
     }
 
-    /* ABOUT / WHAT I DO */
-    #about {
-      padding: 6rem 2rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .section-label {
+    /* ── SECTION HEADER ── */
+    .sec-label {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       color: var(--text3);
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
     }
-
     h2 {
-      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
       font-weight: 700;
-      margin-bottom: 2rem;
       letter-spacing: -0.02em;
+      margin-bottom: 2rem;
     }
 
-    .about-grid {
+    /* ── IMPACT GRID ── */
+    #impact { padding: 6rem 2rem; }
+
+    .impact-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
     }
 
-    .about-card {
+    .impact-card {
       background: var(--bg3);
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 1.5rem;
-      transition: border-color 0.2s, transform 0.2s;
+      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .impact-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .impact-card:hover {
+      border-color: rgba(88,166,255,0.3);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+    }
+    .impact-card:hover::before { opacity: 1; }
+
+    .ic-icon {
+      font-size: 1.4rem;
+      margin-bottom: 0.75rem;
+    }
+    .ic-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+    .ic-body {
+      font-size: 0.8rem;
+      color: var(--text2);
+      line-height: 1.65;
     }
 
-    .about-card:hover {
-      border-color: var(--accent);
-      transform: translateY(-2px);
+    /* ── PROBLEMS ── */
+    #problems { padding: 6rem 2rem; }
+
+    .problem-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .problem-item {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: center;
+      transition: border-color 0.2s;
+    }
+    .problem-item:hover { border-color: rgba(63,185,80,0.3); }
+
+    .problem-q {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--text2);
+      margin-bottom: 0.35rem;
+    }
+    .problem-q::before { content: '// '; color: var(--text3); }
+
+    .problem-a {
+      font-size: 0.85rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+    .problem-a::before {
+      content: '→ ';
+      color: var(--green);
+      font-weight: 700;
     }
 
-    .about-card-icon {
-      font-size: 1.5rem;
+    /* ── STACK ── */
+    #stack { padding: 6rem 2rem; }
+
+    .stack-groups { display: flex; flex-direction: column; gap: 2rem; }
+
+    .sg-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--accent);
+      letter-spacing: 0.08em;
       margin-bottom: 0.75rem;
     }
 
-    .about-card h3 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      color: var(--text);
-    }
-
-    .about-card p {
-      font-size: 0.85rem;
-      color: var(--text2);
-      line-height: 1.6;
-    }
-
-    /* SKILLS */
-    #skills {
-      padding: 6rem 2rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .skills-groups {
-      display: flex;
-      flex-direction: column;
-      gap: 2.5rem;
-    }
-
-    .skill-group-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem;
-      color: var(--accent);
-      letter-spacing: 0.08em;
-      margin-bottom: 1rem;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 
     .tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      padding: 0.35rem 0.85rem;
+      padding: 0.3rem 0.8rem;
       border-radius: 20px;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: 500;
       border: 1px solid;
-      transition: all 0.2s;
+      transition: transform 0.15s;
+      cursor: default;
     }
-
     .tag:hover { transform: translateY(-1px); }
 
-    .tag-blue  { color: var(--accent);  border-color: rgba(88,166,255,0.3);  background: rgba(88,166,255,0.07); }
-    .tag-green { color: var(--accent2); border-color: rgba(63,185,80,0.3);   background: rgba(63,185,80,0.07); }
-    .tag-red   { color: var(--accent3); border-color: rgba(247,129,102,0.3); background: rgba(247,129,102,0.07); }
-    .tag-purple{ color: var(--purple);  border-color: rgba(188,140,255,0.3); background: rgba(188,140,255,0.07); }
+    .t-blue   { color: var(--accent);  border-color: rgba(88,166,255,0.25);  background: rgba(88,166,255,0.06); }
+    .t-green  { color: var(--green);   border-color: rgba(63,185,80,0.25);   background: rgba(63,185,80,0.06); }
+    .t-orange { color: var(--orange);  border-color: rgba(247,129,102,0.25); background: rgba(247,129,102,0.06); }
+    .t-purple { color: var(--purple);  border-color: rgba(188,140,255,0.25); background: rgba(188,140,255,0.06); }
 
-    /* EXPERIENCE */
-    #experience {
-      padding: 6rem 2rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
+    /* ── CREDENTIALS ── */
+    #credentials { padding: 6rem 2rem; }
 
-    .timeline {
-      position: relative;
-      padding-left: 2rem;
-    }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0.5rem;
-      bottom: 0;
-      width: 1px;
-      background: var(--border);
-    }
-
-    .timeline-item {
-      position: relative;
-      padding-bottom: 2.5rem;
-    }
-
-    .timeline-item:last-child { padding-bottom: 0; }
-
-    .timeline-dot {
-      position: absolute;
-      left: -2rem;
-      top: 0.4rem;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      transform: translateX(-3.5px);
-      box-shadow: 0 0 0 3px rgba(88,166,255,0.2);
-    }
-
-    .timeline-dot.active {
-      background: var(--accent2);
-      box-shadow: 0 0 0 3px rgba(63,185,80,0.2);
-      animation: pulse 2s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { box-shadow: 0 0 0 3px rgba(63,185,80,0.2); }
-      50% { box-shadow: 0 0 0 6px rgba(63,185,80,0.1); }
-    }
-
-    .timeline-date {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      color: var(--text3);
-      margin-bottom: 0.25rem;
-    }
-
-    .timeline-role {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 0.2rem;
-    }
-
-    .timeline-org {
-      font-size: 0.85rem;
-      color: var(--accent);
-      margin-bottom: 0.6rem;
-    }
-
-    .timeline-desc {
-      font-size: 0.85rem;
-      color: var(--text2);
-      line-height: 1.6;
-    }
-
-    /* CREDENTIALS */
-    #credentials {
-      padding: 6rem 2rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .creds-grid {
+    .cred-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
       gap: 1rem;
     }
-
     .cred-card {
       background: var(--bg3);
       border: 1px solid var(--border);
@@ -409,54 +341,33 @@
       padding: 1.25rem;
       transition: all 0.2s;
     }
-
     .cred-card:hover {
-      border-color: var(--purple);
+      border-color: rgba(188,140,255,0.3);
       transform: translateY(-2px);
     }
+    .cred-icon { font-size: 1.2rem; margin-bottom: 0.5rem; }
+    .cred-name { font-size: 0.85rem; font-weight: 600; color: var(--text); margin-bottom: 0.2rem; }
+    .cred-sub  { font-size: 0.75rem; color: var(--text3); }
 
-    .cred-icon {
-      font-size: 1.25rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .cred-name {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 0.2rem;
-    }
-
-    .cred-type {
-      font-size: 0.75rem;
-      color: var(--text3);
-    }
-
-    /* CONTACT */
+    /* ── CONTACT ── */
     #contact {
-      padding: 6rem 2rem;
-      max-width: 900px;
-      margin: 0 auto;
+      padding: 6rem 2rem 4rem;
       text-align: center;
     }
-
     #contact h2 { margin-bottom: 0.75rem; }
-
     .contact-desc {
       color: var(--text2);
-      font-size: 1rem;
-      margin-bottom: 2.5rem;
-      line-height: 1.7;
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+      line-height: 1.75;
     }
-
-    .social-links {
+    .socials {
       display: flex;
       justify-content: center;
-      gap: 1rem;
+      gap: 0.75rem;
       flex-wrap: wrap;
     }
-
-    .social-link {
+    .social {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
@@ -466,46 +377,44 @@
       border: 1px solid var(--border);
       color: var(--text2);
       text-decoration: none;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       font-weight: 500;
       transition: all 0.2s;
     }
-
-    .social-link:hover {
+    .social:hover {
       color: var(--text);
-      border-color: var(--text2);
+      border-color: var(--text3);
       transform: translateY(-2px);
     }
 
-    /* FOOTER */
+    /* ── FOOTER ── */
     footer {
       position: relative;
       z-index: 1;
       text-align: center;
-      padding: 2rem;
+      padding: 1.5rem 2rem;
       border-top: 1px solid var(--border);
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       color: var(--text3);
     }
 
-    /* FADE IN */
-    .fade-in {
+    /* ── ANIMATIONS ── */
+    .reveal {
       opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
+      transform: translateY(18px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
     }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .impact-grid { grid-template-columns: 1fr 1fr; }
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { gap: 1.25rem; }
     }
-
-    /* RESPONSIVE */
-    @media (max-width: 640px) {
-      nav { padding: 1rem; }
-      .nav-links { gap: 1rem; }
-      .about-grid { grid-template-columns: 1fr; }
+    @media (max-width: 480px) {
+      .impact-grid { grid-template-columns: 1fr; }
       .hero-cta { flex-direction: column; }
     }
   </style>
@@ -515,338 +424,367 @@
 <canvas id="bg-canvas"></canvas>
 
 <nav>
-  <a href="#hero" class="nav-logo">df<span>.dev</span></a>
+  <a href="#hero" class="nav-logo">delano<span>.fernando</span></a>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#experience">Experience</a></li>
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#stack">Stack</a></li>
+    <li><a href="#credentials">Background</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
+<!-- HERO -->
 <section id="hero">
-  <div class="hero-inner">
-    <p class="hero-eyebrow">Hello, world</p>
-    <h1>Delano <span class="name-accent">Fernando</span></h1>
-    <p class="hero-subtitle">
-      <span id="typed"></span><span class="cursor"></span>
-    </p>
+  <div class="inner">
+    <p class="hero-tag">Marketing Operations · Colombo, Sri Lanka</p>
+    <h1>Delano<br/><span class="accent">Fernando.</span></h1>
+    <p class="hero-sub"><span id="typed"></span><span class="cursor"></span></p>
     <p class="hero-desc">
-      Information Systems specialist with 6+ years working with international organizations.
-      I build systems that actually work — CRM architecture, marketing automation, analytics,
-      and everything in between — all mapped back to business outcomes.
+      I build the systems, automations, and data infrastructure that let go-to-market teams operate at scale.
+      Equal parts engineer and strategist — I write the code, design the architecture, and walk into the
+      leadership meeting to explain what it means for the business.
     </p>
     <div class="hero-cta">
-      <a href="mailto:hi@delanofernando.com" class="btn btn-primary">Get in touch</a>
-      <a href="https://delanofernando.com" class="btn btn-ghost">Visit my site</a>
+      <a href="https://delanofernando.com" class="btn btn-primary">Visit my site</a>
       <a href="https://linkedin.delanofernando.com" class="btn btn-ghost">LinkedIn</a>
+      <a href="mailto:hi@delanofernando.com" class="btn btn-ghost">Get in touch</a>
     </div>
   </div>
 </section>
 
-<div class="section-divider"></div>
+<div class="divider"></div>
 
-<section id="about">
-  <p class="section-label">// what i do</p>
-  <h2>Code meets business context.</h2>
-  <div class="about-grid">
-    <div class="about-card fade-in">
-      <div class="about-card-icon">⚙️</div>
-      <h3>CRM Architecture</h3>
-      <p>Designing scalable Salesforce and HubSpot systems built for real operational pressure — lifecycle stages, routing, deduplication, and sync integrity across stacks.</p>
-    </div>
-    <div class="about-card fade-in">
-      <div class="about-card-icon">🔄</div>
-      <h3>Marketing Automation</h3>
-      <p>End-to-end SFMC journey builds, AMPScript/SSJS solutions, n8n workflow automation, and multi-system integrations that reduce manual ops at scale.</p>
-    </div>
-    <div class="about-card fade-in">
-      <div class="about-card-icon">📊</div>
-      <h3>Analytics & Data</h3>
-      <p>SQL-driven reporting, GA4 and GTM implementation, attribution modeling, and dashboards that help stakeholders make faster, better decisions.</p>
-    </div>
-    <div class="about-card fade-in">
-      <div class="about-card-icon">🌐</div>
-      <h3>Stakeholder Translation</h3>
-      <p>Turning business requirements into technical specs and technical outputs into strategy. I sit at the intersection of both worlds — and that's exactly where problems get solved.</p>
+<!-- IMPACT -->
+<section id="impact">
+  <div class="inner">
+    <p class="sec-label">// what I bring to the table</p>
+    <h2>Impact, not just output.</h2>
+    <div class="impact-grid">
+
+      <div class="impact-card reveal">
+        <div class="ic-icon">⚙️</div>
+        <p class="ic-title">GTM Systems Architecture</p>
+        <p class="ic-body">CRM design, lead lifecycle logic, routing rules, deduplication, and the sync layer between Salesforce, HubSpot, and every tool connected to them — built to hold up under real operational pressure.</p>
+      </div>
+
+      <div class="impact-card reveal">
+        <div class="ic-icon">🔄</div>
+        <p class="ic-title">Marketing Automation at Scale</p>
+        <p class="ic-body">SFMC journey builds, AMPScript and SSJS solutions, and n8n workflow automation that replaces manual effort, reduces error, and scales without constant maintenance.</p>
+      </div>
+
+      <div class="impact-card reveal">
+        <div class="ic-icon">📊</div>
+        <p class="ic-title">Attribution & Pipeline Intelligence</p>
+        <p class="ic-body">Multi-touch attribution wired across Dreamdata, GA4, and CRM — so leadership sees exactly what's driving pipeline. Dashboards in Superset, data integrity in SQL.</p>
+      </div>
+
+      <div class="impact-card reveal">
+        <div class="ic-icon">🤝</div>
+        <p class="ic-title">Stakeholder Fluency</p>
+        <p class="ic-body">I translate business requirements into technical architecture — and technical outputs into decisions. I sit comfortably in the engineering meeting and the board room. That gap is where problems live.</p>
+      </div>
+
+      <div class="impact-card reveal">
+        <div class="ic-icon">📬</div>
+        <p class="ic-title">Email & Campaign Operations</p>
+        <p class="ic-body">End-to-end campaign management: governance frameworks, deliverability standards, segmentation strategy, and performance analysis tied back to revenue — not just opens and clicks.</p>
+      </div>
+
+      <div class="impact-card reveal">
+        <div class="ic-icon">🧠</div>
+        <p class="ic-title">AI-Enabled Workflows</p>
+        <p class="ic-body">Integrating AI tooling into operational workflows — using automation platforms and APIs to remove repetitive work and free teams for decisions that actually need a human.</p>
+      </div>
+
     </div>
   </div>
 </section>
 
-<div class="section-divider"></div>
+<div class="divider"></div>
 
-<section id="skills">
-  <p class="section-label">// tech stack</p>
-  <h2>Tools I work with.</h2>
-  <div class="skills-groups fade-in">
+<!-- PROBLEMS -->
+<section id="problems">
+  <div class="inner">
+    <p class="sec-label">// the problems I solve</p>
+    <h2>Real problems. Real fixes.</h2>
+    <div class="problem-list reveal">
 
-    <div>
-      <p class="skill-group-label">// CRM & Marketing Platforms</p>
-      <div class="tags">
-        <span class="tag tag-blue">Salesforce</span>
-        <span class="tag tag-blue">Marketing Cloud (SFMC)</span>
-        <span class="tag tag-blue">HubSpot</span>
-        <span class="tag tag-blue">Outreach</span>
+      <div class="problem-item">
+        <div>
+          <p class="problem-q">We don't know which campaigns are driving revenue.</p>
+          <p class="problem-a">Multi-touch attribution across Dreamdata, GA4, and CRM — tied to closed-won pipeline.</p>
+        </div>
       </div>
-    </div>
 
-    <div>
-      <p class="skill-group-label">// Languages & Code</p>
-      <div class="tags">
-        <span class="tag tag-green">JavaScript</span>
-        <span class="tag tag-green">SQL / SOQL</span>
-        <span class="tag tag-green">AMPScript</span>
-        <span class="tag tag-green">SSJS</span>
-        <span class="tag tag-green">Apex</span>
-        <span class="tag tag-green">HTML / CSS</span>
-        <span class="tag tag-green">Java</span>
+      <div class="problem-item">
+        <div>
+          <p class="problem-q">Our lead routing is broken and reps are missing follow-ups.</p>
+          <p class="problem-a">Lifecycle stage logic, assignment rules, dedup workflows, and sync integrity across systems.</p>
+        </div>
       </div>
-    </div>
 
-    <div>
-      <p class="skill-group-label">// Automation & Analytics</p>
-      <div class="tags">
-        <span class="tag tag-red">n8n</span>
-        <span class="tag tag-red">Google Analytics 4</span>
-        <span class="tag tag-red">Google Tag Manager</span>
-        <span class="tag tag-red">VWO</span>
-        <span class="tag tag-red">Dreamdata</span>
-        <span class="tag tag-red">Unify</span>
+      <div class="problem-item">
+        <div>
+          <p class="problem-q">We're doing everything manually and can't scale.</p>
+          <p class="problem-a">n8n automation, SFMC journeys, HubSpot workflows — built to run without babysitting.</p>
+        </div>
       </div>
-    </div>
 
-    <div>
-      <p class="skill-group-label">// Tools & Platforms</p>
-      <div class="tags">
-        <span class="tag tag-purple">Asana</span>
-        <span class="tag tag-purple">Slack</span>
-        <span class="tag tag-purple">Superset</span>
-        <span class="tag tag-purple">Typeform</span>
-        <span class="tag tag-purple">WordPress</span>
-        <span class="tag tag-purple">Google Cloud</span>
+      <div class="problem-item">
+        <div>
+          <p class="problem-q">Our data is inconsistent across Salesforce and HubSpot.</p>
+          <p class="problem-a">SQL pipelines, field mapping audits, API integrations, and governance standards that last.</p>
+        </div>
       </div>
-    </div>
 
+      <div class="problem-item">
+        <div>
+          <p class="problem-q">Marketing and Sales aren't aligned on pipeline.</p>
+          <p class="problem-a">Shared dashboards, campaign attribution, lead scoring, and ABM infrastructure that connects both teams.</p>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
-<div class="section-divider"></div>
+<div class="divider"></div>
 
-<section id="experience">
-  <p class="section-label">// experience</p>
-  <h2>Where I've worked.</h2>
-  <div class="timeline fade-in">
+<!-- STACK -->
+<section id="stack">
+  <div class="inner">
+    <p class="sec-label">// tech stack</p>
+    <h2>Tools I work with.</h2>
+    <div class="stack-groups reveal">
 
-    <div class="timeline-item">
-      <div class="timeline-dot active"></div>
-      <p class="timeline-date">OCT 2022 — PRESENT</p>
-      <p class="timeline-role">Salesforce Marketing Cloud Developer</p>
-      <p class="timeline-org">Acuity Knowledge Partners</p>
-      <p class="timeline-desc">Configuration and development across SFDC and SFMC platforms. Delivering SSJS, AMPScript, SQL/SOQL, Apex, and JavaScript solutions for enterprise marketing operations.</p>
+      <div>
+        <p class="sg-label">// crm & marketing platforms</p>
+        <div class="tags">
+          <span class="tag t-blue">Salesforce</span>
+          <span class="tag t-blue">Marketing Cloud (SFMC)</span>
+          <span class="tag t-blue">HubSpot</span>
+          <span class="tag t-blue">Outreach</span>
+          <span class="tag t-blue">Segment</span>
+        </div>
+      </div>
+
+      <div>
+        <p class="sg-label">// languages & code</p>
+        <div class="tags">
+          <span class="tag t-green">JavaScript</span>
+          <span class="tag t-green">SQL / SOQL</span>
+          <span class="tag t-green">AMPScript</span>
+          <span class="tag t-green">SSJS</span>
+          <span class="tag t-green">Apex</span>
+          <span class="tag t-green">HTML / CSS</span>
+        </div>
+      </div>
+
+      <div>
+        <p class="sg-label">// automation & analytics</p>
+        <div class="tags">
+          <span class="tag t-orange">n8n</span>
+          <span class="tag t-orange">GA4</span>
+          <span class="tag t-orange">Google Tag Manager</span>
+          <span class="tag t-orange">VWO</span>
+          <span class="tag t-orange">Dreamdata</span>
+          <span class="tag t-orange">Unify</span>
+        </div>
+      </div>
+
+      <div>
+        <p class="sg-label">// data & reporting</p>
+        <div class="tags">
+          <span class="tag t-purple">Apache Superset</span>
+          <span class="tag t-purple">Typeform</span>
+          <span class="tag t-purple">Asana</span>
+          <span class="tag t-purple">Slack</span>
+          <span class="tag t-purple">Google Cloud</span>
+        </div>
+      </div>
+
     </div>
-
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <p class="timeline-date">JUL 2022 — OCT 2022</p>
-      <p class="timeline-role">Marketing Cloud Email Specialist</p>
-      <p class="timeline-org">Acuity Knowledge Partners</p>
-      <p class="timeline-desc">Campaign segmentation, automation workflows, and cross-functional performance analysis across marketing channels.</p>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <p class="timeline-date">JUL 2020 — JUL 2022</p>
-      <p class="timeline-role">Analyst, Digital Business Services</p>
-      <p class="timeline-org">HSBC Global Service Center</p>
-      <p class="timeline-desc">Client data management, regulatory compliance, and risk assessment for a global financial institution.</p>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <p class="timeline-date">JUN 2016 — JAN 2020</p>
-      <p class="timeline-role">Digital Media & Technology Consultant</p>
-      <p class="timeline-org">Freelance</p>
-      <p class="timeline-desc">Web design and development, SEO, social media marketing, photography, and cinematography for clients across industries.</p>
-    </div>
-
   </div>
 </section>
 
-<div class="section-divider"></div>
+<div class="divider"></div>
 
+<!-- CREDENTIALS -->
 <section id="credentials">
-  <p class="section-label">// credentials</p>
-  <h2>Education & Certifications.</h2>
-  <div class="creds-grid fade-in">
+  <div class="inner">
+    <p class="sec-label">// background</p>
+    <h2>Education & Credentials.</h2>
+    <div class="cred-grid reveal">
 
-    <div class="cred-card">
-      <div class="cred-icon">🎓</div>
-      <p class="cred-name">BSc (Hons) Computing Information Systems</p>
-      <p class="cred-type">First Class — University of Greenwich</p>
+      <div class="cred-card">
+        <div class="cred-icon">🎓</div>
+        <p class="cred-name">BSc (Hons) Computing Information Systems</p>
+        <p class="cred-sub">First Class — University of Greenwich</p>
+      </div>
+
+      <div class="cred-card">
+        <div class="cred-icon">📘</div>
+        <p class="cred-name">MBA</p>
+        <p class="cred-sub">Postgraduate Institute of Management, Sri Jayewardenepura</p>
+      </div>
+
+      <div class="cred-card">
+        <div class="cred-icon">📗</div>
+        <p class="cred-name">MSc Information Technology</p>
+        <p class="cred-sub">SLIIT</p>
+      </div>
+
+      <div class="cred-card">
+        <div class="cred-icon">🏫</div>
+        <p class="cred-name">St. Joseph's College, Colombo</p>
+        <p class="cred-sub">G.C.E. A/L · ICT Society President · Media Circle · FM Joes · MUN</p>
+      </div>
+
+      <div class="cred-card">
+        <div class="cred-icon">☁️</div>
+        <p class="cred-name">Google Cloud Digital Leader</p>
+        <p class="cred-sub">Certified</p>
+      </div>
+
+      <div class="cred-card">
+        <div class="cred-icon">📈</div>
+        <p class="cred-name">Advanced Google Analytics</p>
+        <p class="cred-sub">Certified</p>
+      </div>
+
+      <div class="cred-card">
+        <div class="cred-icon">⚡</div>
+        <p class="cred-name">Six Sigma Yellow Belt</p>
+        <p class="cred-sub">Certified</p>
+      </div>
+
     </div>
-
-    <div class="cred-card">
-      <div class="cred-icon">📘</div>
-      <p class="cred-name">MBA</p>
-      <p class="cred-type">Reading — PIM-SJP</p>
-    </div>
-
-    <div class="cred-card">
-      <div class="cred-icon">📗</div>
-      <p class="cred-name">MSc Information Technology</p>
-      <p class="cred-type">Reading — SLIIT</p>
-    </div>
-
-    <div class="cred-card">
-      <div class="cred-icon">☁️</div>
-      <p class="cred-name">Google Cloud Digital Leader</p>
-      <p class="cred-type">Certification</p>
-    </div>
-
-    <div class="cred-card">
-      <div class="cred-icon">📈</div>
-      <p class="cred-name">Advanced Google Analytics</p>
-      <p class="cred-type">Certification</p>
-    </div>
-
-    <div class="cred-card">
-      <div class="cred-icon">⚡</div>
-      <p class="cred-name">Six Sigma Yellow Belt</p>
-      <p class="cred-type">Certification</p>
-    </div>
-
   </div>
 </section>
 
-<div class="section-divider"></div>
+<div class="divider"></div>
 
+<!-- CONTACT -->
 <section id="contact">
-  <p class="section-label">// contact</p>
-  <h2>Let's work together.</h2>
-  <p class="contact-desc">
-    Based in Colombo, Sri Lanka. Working globally.<br/>
-    Open to interesting projects, collaborations, and conversations.
-  </p>
-  <div class="social-links">
-    <a href="mailto:hi@delanofernando.com" class="social-link">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      Email
-    </a>
-    <a href="https://linkedin.delanofernando.com" class="social-link">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-      LinkedIn
-    </a>
-    <a href="https://github.com/DelanoFernando" class="social-link">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-      GitHub
-    </a>
-    <a href="https://delanofernando.com" class="social-link">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-      Website
-    </a>
+  <div class="inner">
+    <p class="sec-label">// contact</p>
+    <h2>Let's work together.</h2>
+    <p class="contact-desc">
+      Based in Colombo, Sri Lanka. Working globally.<br/>
+      Open to conversations, collaborations, and problems worth solving.
+    </p>
+    <div class="socials">
+      <a href="https://delanofernando.com" class="social">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        delanofernando.com
+      </a>
+      <a href="https://linkedin.delanofernando.com" class="social">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://github.com/DelanoFernando" class="social">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        GitHub
+      </a>
+      <a href="mailto:hi@delanofernando.com" class="social">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Email
+      </a>
+    </div>
   </div>
 </section>
 
 <footer>
-  <span>built by delano fernando &mdash; <span id="year"></span></span>
+  <span>delano fernando &nbsp;·&nbsp; <span id="yr"></span> &nbsp;·&nbsp; colombo, sri lanka</span>
 </footer>
 
 <script>
-  // Year
-  document.getElementById('year').textContent = new Date().getFullYear();
+  document.getElementById('yr').textContent = new Date().getFullYear();
 
-  // Typing animation
+  // Typing
   const phrases = [
-    'MarOps & BizOps Specialist',
-    'Salesforce Developer',
-    'Marketing Automation Engineer',
-    'Systems Thinker',
+    'I connect systems that drive revenue.',
+    'I turn messy data into clear decisions.',
+    'I build automation that actually scales.',
+    'I bridge the gap between code and strategy.',
   ];
-  let pIdx = 0, cIdx = 0, deleting = false;
+  let pi = 0, ci = 0, del = false;
   const el = document.getElementById('typed');
-
   function type() {
-    const current = phrases[pIdx];
-    if (!deleting) {
-      el.textContent = current.slice(0, ++cIdx);
-      if (cIdx === current.length) { deleting = true; return setTimeout(type, 2000); }
+    const w = phrases[pi];
+    if (!del) {
+      el.textContent = w.slice(0, ++ci);
+      if (ci === w.length) { del = true; return setTimeout(type, 2200); }
     } else {
-      el.textContent = current.slice(0, --cIdx);
-      if (cIdx === 0) { deleting = false; pIdx = (pIdx + 1) % phrases.length; }
+      el.textContent = w.slice(0, --ci);
+      if (ci === 0) { del = false; pi = (pi + 1) % phrases.length; }
     }
-    setTimeout(type, deleting ? 40 : 70);
+    setTimeout(type, del ? 35 : 65);
   }
-  setTimeout(type, 800);
+  setTimeout(type, 600);
 
-  // Scroll fade-in
-  const observer = new IntersectionObserver(entries => {
+  // Scroll reveal
+  const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
   // Particle canvas
   const canvas = document.getElementById('bg-canvas');
   const ctx = canvas.getContext('2d');
-  let W, H, particles = [];
+  let W, H, pts = [];
 
   function resize() {
     W = canvas.width = window.innerWidth;
     H = canvas.height = window.innerHeight;
   }
 
-  function randBetween(a, b) { return a + Math.random() * (b - a); }
-
-  function initParticles() {
-    particles = [];
-    const count = Math.floor((W * H) / 18000);
-    for (let i = 0; i < count; i++) {
-      particles.push({
+  function init() {
+    pts = [];
+    const n = Math.floor((W * H) / 20000);
+    for (let i = 0; i < n; i++) {
+      pts.push({
         x: Math.random() * W,
         y: Math.random() * H,
-        vx: randBetween(-0.15, 0.15),
-        vy: randBetween(-0.15, 0.15),
-        r: randBetween(1, 2),
-        alpha: randBetween(0.2, 0.7),
+        vx: (Math.random() - 0.5) * 0.2,
+        vy: (Math.random() - 0.5) * 0.2,
+        r: Math.random() * 1.5 + 0.5,
+        a: Math.random() * 0.5 + 0.2,
       });
     }
   }
 
-  function drawParticles() {
+  function draw() {
     ctx.clearRect(0, 0, W, H);
-    particles.forEach(p => {
-      p.x += p.vx; p.y += p.vy;
-      if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
-      if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+    pts.forEach(p => {
+      p.x = (p.x + p.vx + W) % W;
+      p.y = (p.y + p.vy + H) % H;
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(88,166,255,${p.alpha})`;
+      ctx.fillStyle = `rgba(88,166,255,${p.a})`;
       ctx.fill();
     });
-
-    // Draw connections
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 120) {
+    for (let i = 0; i < pts.length; i++) {
+      for (let j = i + 1; j < pts.length; j++) {
+        const dx = pts[i].x - pts[j].x;
+        const dy = pts[i].y - pts[j].y;
+        const d = Math.sqrt(dx * dx + dy * dy);
+        if (d < 130) {
           ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(88,166,255,${0.08 * (1 - dist / 120)})`;
+          ctx.moveTo(pts[i].x, pts[i].y);
+          ctx.lineTo(pts[j].x, pts[j].y);
+          ctx.strokeStyle = `rgba(88,166,255,${0.07 * (1 - d / 130)})`;
           ctx.lineWidth = 0.5;
           ctx.stroke();
         }
       }
     }
-    requestAnimationFrame(drawParticles);
+    requestAnimationFrame(draw);
   }
 
-  resize();
-  initParticles();
-  drawParticles();
-  window.addEventListener('resize', () => { resize(); initParticles(); });
+  resize(); init(); draw();
+  window.addEventListener('resize', () => { resize(); init(); });
 </script>
-
 </body>
 </html>
