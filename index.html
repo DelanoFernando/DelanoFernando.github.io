@@ -4,30 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Delano Fernando</title>
-  <meta name="description" content="Marketing Operations specialist. I connect systems, automate workflows, and turn data into decisions that move revenue forward." />
+  <meta name="description" content="Marketing Operations specialist working with international technology companies on CRM, automation, analytics, and revenue systems." />
   <link rel="icon" type="image/x-icon" href="https://www.delanofernando.com/images/favicons/AF%20Transparent%20Favicon.ico" />
   <link rel="icon" type="image/png" sizes="16x16" href="https://www.delanofernando.com/images/favicons/favicon-16x16.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="https://www.delanofernando.com/images/favicons/favicon-32x32.png" />
   <link rel="apple-touch-icon" href="https://www.delanofernando.com/images/favicons/apple-touch-icon.png" />
-  <meta property="og:image" content="https://www.delanofernando.com/images/favicons/android-chrome-512x512.png" />
   <meta property="og:title" content="Delano Fernando" />
-  <meta property="og:description" content="Marketing Operations specialist. I connect systems, automate workflows, and turn data into decisions that move revenue forward." />
+  <meta property="og:description" content="Marketing Operations specialist working with international technology companies." />
+  <meta property="og:image" content="https://www.delanofernando.com/images/favicons/android-chrome-512x512.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg:      #060a10;
-      --bg2:     #0d1117;
-      --bg3:     #161b22;
-      --bg4:     #1c2230;
-      --border:  #21262d;
-      --accent:  #58a6ff;
-      --green:   #3fb950;
-      --orange:  #f78166;
-      --purple:  #bc8cff;
-      --text:    #e6edf3;
-      --text2:   #8b949e;
-      --text3:   #484f58;
+      --bg:      #111213;
+      --bg2:     #161819;
+      --bg3:     #1e1f22;
+      --bg4:     #26272b;
+      --border:  #2e2f33;
+      --accent:  #0077ff;
+      --accent2: #005eff;
+      --text:    #f0f0f0;
+      --text2:   #b3b3b3;
+      --text3:   #707070;
     }
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -40,16 +39,15 @@
       line-height: 1.6;
     }
 
-    /* ── CANVAS ── */
     #bg-canvas {
       position: fixed;
       inset: 0;
       z-index: 0;
-      opacity: 0.35;
+      opacity: 0.3;
       pointer-events: none;
     }
 
-    /* ── NAV ── */
+    /* NAV */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -58,8 +56,9 @@
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2.5rem;
-      background: rgba(6,10,16,0.85);
+      background: rgba(17,18,19,0.88);
       backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border);
     }
 
@@ -68,32 +67,30 @@
       align-items: center;
       gap: 0.6rem;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.95rem;
-      color: var(--accent);
+      font-size: 0.9rem;
+      color: var(--text);
       text-decoration: none;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.01em;
     }
     .nav-logo img {
-      width: 28px;
-      height: 28px;
+      width: 26px;
+      height: 26px;
       border-radius: 50%;
       object-fit: cover;
-      opacity: 0.9;
     }
-    .nav-logo span { color: var(--text3); }
+    .nav-logo span { color: var(--accent); }
 
     .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a {
-      color: var(--text2);
+      color: var(--text3);
       text-decoration: none;
       font-size: 0.8rem;
       font-weight: 500;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.02em;
       transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--text); }
 
-    /* ── SECTIONS ── */
     section { position: relative; z-index: 1; }
 
     .inner {
@@ -102,7 +99,7 @@
       padding: 0 2rem;
     }
 
-    /* ── HERO ── */
+    /* HERO */
     #hero {
       min-height: 100vh;
       display: flex;
@@ -110,22 +107,23 @@
       padding: 8rem 2rem 4rem;
     }
 
-    .hero-tag {
+    .hero-eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.6rem;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem;
-      color: var(--green);
-      margin-bottom: 1.75rem;
-      letter-spacing: 0.04em;
+      font-size: 0.72rem;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
     }
-    .hero-tag::before {
+    .hero-eyebrow::before {
       content: '';
       display: block;
-      width: 1.75rem;
+      width: 1.5rem;
       height: 1px;
-      background: var(--green);
+      background: var(--accent);
     }
 
     h1 {
@@ -138,16 +136,16 @@
     .accent { color: var(--accent); }
 
     .hero-sub {
-      font-size: clamp(1rem, 2.5vw, 1.35rem);
+      font-size: clamp(1rem, 2.2vw, 1.25rem);
       color: var(--text2);
       font-weight: 400;
       margin-bottom: 1.5rem;
-      min-height: 2rem;
+      min-height: 1.8rem;
     }
     .cursor {
       display: inline-block;
       width: 2px;
-      height: 1em;
+      height: 0.9em;
       background: var(--accent);
       margin-left: 2px;
       vertical-align: middle;
@@ -158,8 +156,8 @@
     .hero-desc {
       font-size: 1rem;
       color: var(--text2);
-      max-width: 580px;
-      line-height: 1.75;
+      max-width: 560px;
+      line-height: 1.8;
       margin-bottom: 2.5rem;
     }
 
@@ -168,23 +166,22 @@
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.45rem;
-      padding: 0.7rem 1.4rem;
-      border-radius: 8px;
-      font-size: 0.85rem;
+      gap: 0.4rem;
+      padding: 0.65rem 1.35rem;
+      border-radius: 6px;
+      font-size: 0.82rem;
       font-weight: 600;
       text-decoration: none;
       transition: all 0.2s;
-      letter-spacing: 0.01em;
     }
     .btn-primary {
       background: var(--accent);
-      color: #000;
+      color: #fff;
       border: 1px solid var(--accent);
     }
     .btn-primary:hover {
-      background: #79b8ff;
-      box-shadow: 0 6px 20px rgba(88,166,255,0.25);
+      background: #0066dd;
+      box-shadow: 0 4px 18px rgba(0,119,255,0.3);
       transform: translateY(-1px);
     }
     .btn-ghost {
@@ -198,7 +195,6 @@
       transform: translateY(-1px);
     }
 
-    /* ── DIVIDER ── */
     .divider {
       max-width: 920px;
       margin: 0 auto;
@@ -206,149 +202,133 @@
       border-top: 1px solid var(--border);
     }
 
-    /* ── SECTION HEADER ── */
     .sec-label {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       color: var(--text3);
       letter-spacing: 0.1em;
       text-transform: uppercase;
       margin-bottom: 0.5rem;
     }
     h2 {
-      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      font-size: clamp(1.4rem, 3vw, 1.85rem);
       font-weight: 700;
       letter-spacing: -0.02em;
       margin-bottom: 2rem;
     }
 
-    /* ── IMPACT GRID ── */
-    #impact { padding: 6rem 2rem; }
+    /* ABOUT */
+    #about { padding: 6rem 2rem; }
 
-    .impact-grid {
+    .about-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .about-col {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem;
+    }
+    .about-col h3 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .about-col p {
+      font-size: 0.85rem;
+      color: var(--text2);
+      line-height: 1.75;
+    }
+
+    /* CAPABILITIES */
+    #capabilities { padding: 6rem 2rem; }
+
+    .cap-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
     }
-
-    .impact-card {
+    .cap-card {
       background: var(--bg3);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.5rem;
-      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+      border-radius: 10px;
+      padding: 1.4rem;
       position: relative;
       overflow: hidden;
+      transition: border-color 0.25s, transform 0.25s;
     }
-    .impact-card::before {
+    .cap-card::after {
       content: '';
       position: absolute;
       top: 0; left: 0;
-      width: 100%; height: 2px;
-      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      width: 3px; height: 100%;
+      background: var(--accent);
       opacity: 0;
-      transition: opacity 0.3s;
+      transition: opacity 0.25s;
     }
-    .impact-card:hover {
-      border-color: rgba(88,166,255,0.3);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+    .cap-card:hover {
+      border-color: rgba(0,119,255,0.35);
+      transform: translateY(-2px);
     }
-    .impact-card:hover::before { opacity: 1; }
-
-    .ic-icon {
-      font-size: 1.4rem;
-      margin-bottom: 0.75rem;
-    }
-    .ic-title {
-      font-size: 0.9rem;
+    .cap-card:hover::after { opacity: 1; }
+    .cap-icon { font-size: 1.2rem; margin-bottom: 0.6rem; }
+    .cap-title {
+      font-size: 0.85rem;
       font-weight: 700;
       color: var(--text);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
     }
-    .ic-body {
-      font-size: 0.8rem;
+    .cap-body {
+      font-size: 0.78rem;
       color: var(--text2);
       line-height: 1.65;
     }
 
-    /* ── PROBLEMS ── */
-    #problems { padding: 6rem 2rem; }
-
-    .problem-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-    .problem-item {
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.25rem 1.5rem;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 1rem;
-      align-items: center;
-      transition: border-color 0.2s;
-    }
-    .problem-item:hover { border-color: rgba(63,185,80,0.3); }
-
-    .problem-q {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.78rem;
-      color: var(--text2);
-      margin-bottom: 0.35rem;
-    }
-    .problem-q::before { content: '// '; color: var(--text3); }
-
-    .problem-a {
-      font-size: 0.85rem;
-      color: var(--text);
-      font-weight: 500;
-    }
-    .problem-a::before {
-      content: '→ ';
-      color: var(--green);
-      font-weight: 700;
-    }
-
-    /* ── STACK ── */
+    /* STACK */
     #stack { padding: 6rem 2rem; }
 
-    .stack-groups { display: flex; flex-direction: column; gap: 2rem; }
+    .stack-groups { display: flex; flex-direction: column; gap: 2.25rem; }
 
     .sg-label {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       color: var(--accent);
       letter-spacing: 0.08em;
+      text-transform: uppercase;
       margin-bottom: 0.75rem;
     }
-
-    .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.45rem; }
 
     .tag {
-      padding: 0.3rem 0.8rem;
-      border-radius: 20px;
+      padding: 0.28rem 0.75rem;
+      border-radius: 4px;
       font-size: 0.75rem;
       font-weight: 500;
       border: 1px solid;
-      transition: transform 0.15s;
+      transition: transform 0.15s, box-shadow 0.15s;
       cursor: default;
+      font-family: 'JetBrains Mono', monospace;
     }
-    .tag:hover { transform: translateY(-1px); }
+    .tag:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
 
-    .t-blue   { color: var(--accent);  border-color: rgba(88,166,255,0.25);  background: rgba(88,166,255,0.06); }
-    .t-green  { color: var(--green);   border-color: rgba(63,185,80,0.25);   background: rgba(63,185,80,0.06); }
-    .t-orange { color: var(--orange);  border-color: rgba(247,129,102,0.25); background: rgba(247,129,102,0.06); }
-    .t-purple { color: var(--purple);  border-color: rgba(188,140,255,0.25); background: rgba(188,140,255,0.06); }
+    .t-solid  { color: #fff;          border-color: var(--accent);           background: var(--accent); }
+    .t-outline{ color: var(--accent);  border-color: rgba(0,119,255,0.3);    background: rgba(0,119,255,0.06); }
+    .t-dim    { color: var(--text2);   border-color: var(--border);           background: var(--bg4); }
 
-    /* ── CREDENTIALS ── */
+    /* CREDENTIALS */
     #credentials { padding: 6rem 2rem; }
 
     .cred-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 1rem;
     }
     .cred-card {
@@ -356,26 +336,30 @@
       border: 1px solid var(--border);
       border-radius: 10px;
       padding: 1.25rem;
-      transition: all 0.2s;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      transition: border-color 0.2s, transform 0.2s;
     }
     .cred-card:hover {
-      border-color: rgba(188,140,255,0.3);
+      border-color: rgba(0,119,255,0.3);
       transform: translateY(-2px);
     }
-    .cred-icon { font-size: 1.2rem; margin-bottom: 0.5rem; }
-    .cred-name { font-size: 0.85rem; font-weight: 600; color: var(--text); margin-bottom: 0.2rem; }
-    .cred-sub  { font-size: 0.75rem; color: var(--text3); }
+    .cred-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .cred-text {}
+    .cred-name { font-size: 0.82rem; font-weight: 700; color: var(--text); margin-bottom: 0.2rem; }
+    .cred-sub  { font-size: 0.72rem; color: var(--text3); line-height: 1.4; }
 
-    /* ── CONTACT ── */
+    /* CONTACT */
     #contact {
       padding: 6rem 2rem 4rem;
       text-align: center;
     }
-    #contact h2 { margin-bottom: 0.75rem; }
+    #contact h2 { margin-bottom: 0.6rem; }
     .contact-desc {
       color: var(--text2);
       font-size: 0.95rem;
-      margin-bottom: 2rem;
+      margin-bottom: 2.25rem;
       line-height: 1.75;
     }
     .socials {
@@ -387,9 +371,9 @@
     .social {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.45rem;
       padding: 0.6rem 1.2rem;
-      border-radius: 8px;
+      border-radius: 6px;
       background: var(--bg3);
       border: 1px solid var(--border);
       color: var(--text2);
@@ -400,11 +384,19 @@
     }
     .social:hover {
       color: var(--text);
-      border-color: var(--text3);
+      border-color: var(--accent);
       transform: translateY(-2px);
     }
+    .social.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+    .social.primary:hover {
+      background: #0066dd;
+      border-color: #0066dd;
+    }
 
-    /* ── FOOTER ── */
     footer {
       position: relative;
       z-index: 1;
@@ -412,27 +404,28 @@
       padding: 1.5rem 2rem;
       border-top: 1px solid var(--border);
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       color: var(--text3);
+      letter-spacing: 0.04em;
     }
 
-    /* ── ANIMATIONS ── */
     .reveal {
       opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 0.55s ease, transform 0.55s ease;
+      transform: translateY(16px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
     }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
-      .impact-grid { grid-template-columns: 1fr 1fr; }
+      .cap-grid { grid-template-columns: 1fr 1fr; }
+      .about-cols { grid-template-columns: 1fr; }
       nav { padding: 1rem 1.25rem; }
       .nav-links { gap: 1.25rem; }
     }
     @media (max-width: 480px) {
-      .impact-grid { grid-template-columns: 1fr; }
+      .cap-grid { grid-template-columns: 1fr; }
       .hero-cta { flex-direction: column; }
+      .nav-links { display: none; }
     }
   </style>
 </head>
@@ -446,7 +439,8 @@
     delano<span>.fernando</span>
   </a>
   <ul class="nav-links">
-    <li><a href="#impact">Impact</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#capabilities">Capabilities</a></li>
     <li><a href="#stack">Stack</a></li>
     <li><a href="#credentials">Background</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -456,13 +450,12 @@
 <!-- HERO -->
 <section id="hero">
   <div class="inner">
-    <p class="hero-tag">Marketing Operations · Colombo, Sri Lanka</p>
+    <p class="hero-eyebrow">Marketing Operations · Colombo, Sri Lanka</p>
     <h1>Delano<br/><span class="accent">Fernando.</span></h1>
     <p class="hero-sub"><span id="typed"></span><span class="cursor"></span></p>
     <p class="hero-desc">
-      I build the systems, automations, and data infrastructure that let go-to-market teams operate at scale.
-      Equal parts engineer and strategist — I write the code, design the architecture, and walk into the
-      leadership meeting to explain what it means for the business.
+      I work in Marketing Operations — keeping the systems behind go-to-market teams working the way they're supposed to.
+      My background is in software engineering, which means I can build what I design, measure what I build, and explain what it means to the people who need to act on it.
     </p>
     <div class="hero-cta">
       <a href="https://delanofernando.com" class="btn btn-primary">Visit my site</a>
@@ -474,95 +467,67 @@
 
 <div class="divider"></div>
 
-<!-- IMPACT -->
-<section id="impact">
+<!-- ABOUT -->
+<section id="about">
   <div class="inner">
-    <p class="sec-label">// what I bring to the table</p>
-    <h2>Impact, not just output.</h2>
-    <div class="impact-grid">
-
-      <div class="impact-card reveal">
-        <div class="ic-icon">⚙️</div>
-        <p class="ic-title">GTM Systems Architecture</p>
-        <p class="ic-body">CRM design, lead lifecycle logic, routing rules, deduplication, and the sync layer between Salesforce, HubSpot, and every tool connected to them — built to hold up under real operational pressure.</p>
+    <p class="sec-label">// background</p>
+    <h2>Engineering meets operations.</h2>
+    <div class="about-cols reveal">
+      <div class="about-col">
+        <h3>Engineering foundation</h3>
+        <p>First Class BSc in Computing Information Systems. I've built Salesforce and HubSpot systems from the schema up — not just configured them. I write Python, SQL, AMPScript, SSJS, Apex, and JavaScript. I understand how data moves between systems, where it tends to break, and how to fix it properly.</p>
       </div>
-
-      <div class="impact-card reveal">
-        <div class="ic-icon">🔄</div>
-        <p class="ic-title">Marketing Automation at Scale</p>
-        <p class="ic-body">SFMC journey builds, AMPScript and SSJS solutions, and n8n workflow automation that replaces manual effort, reduces error, and scales without constant maintenance.</p>
+      <div class="about-col">
+        <h3>Operations experience</h3>
+        <p>MBA from PIM-SJP. Six years working with international organizations across financial services and technology. I work well across functions — comfortable translating between engineering and business, and getting both sides moving in the same direction toward a clear outcome.</p>
       </div>
-
-      <div class="impact-card reveal">
-        <div class="ic-icon">📊</div>
-        <p class="ic-title">Attribution & Pipeline Intelligence</p>
-        <p class="ic-body">Multi-touch attribution wired across Dreamdata, GA4, and CRM — so leadership sees exactly what's driving pipeline. Dashboards in Superset, data integrity in SQL.</p>
-      </div>
-
-      <div class="impact-card reveal">
-        <div class="ic-icon">🤝</div>
-        <p class="ic-title">Stakeholder Fluency</p>
-        <p class="ic-body">I translate business requirements into technical architecture — and technical outputs into decisions. I sit comfortably in the engineering meeting and the board room. That gap is where problems live.</p>
-      </div>
-
-      <div class="impact-card reveal">
-        <div class="ic-icon">📬</div>
-        <p class="ic-title">Email & Campaign Operations</p>
-        <p class="ic-body">End-to-end campaign management: governance frameworks, deliverability standards, segmentation strategy, and performance analysis tied back to revenue — not just opens and clicks.</p>
-      </div>
-
-      <div class="impact-card reveal">
-        <div class="ic-icon">🧠</div>
-        <p class="ic-title">AI-Enabled Workflows</p>
-        <p class="ic-body">Integrating AI tooling into operational workflows — using automation platforms and APIs to remove repetitive work and free teams for decisions that actually need a human.</p>
-      </div>
-
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- PROBLEMS -->
-<section id="problems">
+<!-- CAPABILITIES -->
+<section id="capabilities">
   <div class="inner">
-    <p class="sec-label">// the problems I solve</p>
-    <h2>Real problems. Real fixes.</h2>
-    <div class="problem-list reveal">
+    <p class="sec-label">// capabilities</p>
+    <h2>What I work on.</h2>
+    <div class="cap-grid">
 
-      <div class="problem-item">
-        <div>
-          <p class="problem-q">We don't know which campaigns are driving revenue.</p>
-          <p class="problem-a">Multi-touch attribution across Dreamdata, GA4, and CRM — tied to closed-won pipeline.</p>
-        </div>
+      <div class="cap-card reveal">
+        <div class="cap-icon">⚙️</div>
+        <p class="cap-title">CRM Architecture</p>
+        <p class="cap-body">Salesforce and HubSpot built from the data model up — lifecycle stages, lead routing, deduplication, and sync integrity across the stack.</p>
       </div>
 
-      <div class="problem-item">
-        <div>
-          <p class="problem-q">Our lead routing is broken and reps are missing follow-ups.</p>
-          <p class="problem-a">Lifecycle stage logic, assignment rules, dedup workflows, and sync integrity across systems.</p>
-        </div>
+      <div class="cap-card reveal">
+        <div class="cap-icon">🔄</div>
+        <p class="cap-title">Marketing Automation</p>
+        <p class="cap-body">SFMC journey builds, AMPScript and SSJS solutions, n8n workflows, and HubSpot automations — designed to run without constant supervision.</p>
       </div>
 
-      <div class="problem-item">
-        <div>
-          <p class="problem-q">We're doing everything manually and can't scale.</p>
-          <p class="problem-a">n8n automation, SFMC journeys, HubSpot workflows — built to run without babysitting.</p>
-        </div>
+      <div class="cap-card reveal">
+        <div class="cap-icon">📊</div>
+        <p class="cap-title">Attribution & BI</p>
+        <p class="cap-body">Multi-touch attribution via Dreamdata and GA4, connected to closed-won pipeline. Reporting in Superset, data integrity in SQL.</p>
       </div>
 
-      <div class="problem-item">
-        <div>
-          <p class="problem-q">Our data is inconsistent across Salesforce and HubSpot.</p>
-          <p class="problem-a">SQL pipelines, field mapping audits, API integrations, and governance standards that last.</p>
-        </div>
+      <div class="cap-card reveal">
+        <div class="cap-icon">🐍</div>
+        <p class="cap-title">Data & Scripting</p>
+        <p class="cap-body">Python and SQL pipelines for moving, transforming, and validating data across platforms. When a spreadsheet solution isn't good enough, I write the code.</p>
       </div>
 
-      <div class="problem-item">
-        <div>
-          <p class="problem-q">Marketing and Sales aren't aligned on pipeline.</p>
-          <p class="problem-a">Shared dashboards, campaign attribution, lead scoring, and ABM infrastructure that connects both teams.</p>
-        </div>
+      <div class="cap-card reveal">
+        <div class="cap-icon">📬</div>
+        <p class="cap-title">Email & Campaign Ops</p>
+        <p class="cap-body">Email governance, deliverability standards, segmentation strategy, and campaign performance analysis tied to revenue — not vanity metrics.</p>
+      </div>
+
+      <div class="cap-card reveal">
+        <div class="cap-icon">🤝</div>
+        <p class="cap-title">Cross-functional Work</p>
+        <p class="cap-body">Comfortable in both the technical design session and the stakeholder meeting. I translate in both directions — requirements into specs, outputs into decisions.</p>
       </div>
 
     </div>
@@ -575,52 +540,62 @@
 <section id="stack">
   <div class="inner">
     <p class="sec-label">// tech stack</p>
-    <h2>Tools I work with.</h2>
+    <h2>Tools and languages.</h2>
     <div class="stack-groups reveal">
 
       <div>
-        <p class="sg-label">// crm & marketing platforms</p>
+        <p class="sg-label">Languages & Code</p>
         <div class="tags">
-          <span class="tag t-blue">Salesforce</span>
-          <span class="tag t-blue">Marketing Cloud (SFMC)</span>
-          <span class="tag t-blue">HubSpot</span>
-          <span class="tag t-blue">Outreach</span>
-          <span class="tag t-blue">Segment</span>
+          <span class="tag t-solid">Python</span>
+          <span class="tag t-solid">SQL</span>
+          <span class="tag t-solid">JavaScript</span>
+          <span class="tag t-solid">SOQL</span>
+          <span class="tag t-solid">AMPScript</span>
+          <span class="tag t-solid">SSJS</span>
+          <span class="tag t-solid">Apex</span>
+          <span class="tag t-solid">HTML / CSS</span>
         </div>
       </div>
 
       <div>
-        <p class="sg-label">// languages & code</p>
+        <p class="sg-label">CRM & Marketing Platforms</p>
         <div class="tags">
-          <span class="tag t-green">JavaScript</span>
-          <span class="tag t-green">SQL / SOQL</span>
-          <span class="tag t-green">AMPScript</span>
-          <span class="tag t-green">SSJS</span>
-          <span class="tag t-green">Apex</span>
-          <span class="tag t-green">HTML / CSS</span>
+          <span class="tag t-outline">Salesforce</span>
+          <span class="tag t-outline">Marketing Cloud</span>
+          <span class="tag t-outline">HubSpot</span>
+          <span class="tag t-outline">Outreach</span>
+          <span class="tag t-outline">Segment</span>
         </div>
       </div>
 
       <div>
-        <p class="sg-label">// automation & analytics</p>
+        <p class="sg-label">Automation & Workflow</p>
         <div class="tags">
-          <span class="tag t-orange">n8n</span>
-          <span class="tag t-orange">GA4</span>
-          <span class="tag t-orange">Google Tag Manager</span>
-          <span class="tag t-orange">VWO</span>
-          <span class="tag t-orange">Dreamdata</span>
-          <span class="tag t-orange">Unify</span>
+          <span class="tag t-outline">n8n</span>
+          <span class="tag t-outline">Journey Builder</span>
+          <span class="tag t-outline">HubSpot Workflows</span>
+          <span class="tag t-outline">Google Tag Manager</span>
         </div>
       </div>
 
       <div>
-        <p class="sg-label">// data & reporting</p>
+        <p class="sg-label">Analytics, Attribution & BI</p>
         <div class="tags">
-          <span class="tag t-purple">Apache Superset</span>
-          <span class="tag t-purple">Typeform</span>
-          <span class="tag t-purple">Asana</span>
-          <span class="tag t-purple">Slack</span>
-          <span class="tag t-purple">Google Cloud</span>
+          <span class="tag t-dim">GA4</span>
+          <span class="tag t-dim">Dreamdata</span>
+          <span class="tag t-dim">Unify</span>
+          <span class="tag t-dim">Apache Superset</span>
+          <span class="tag t-dim">VWO</span>
+        </div>
+      </div>
+
+      <div>
+        <p class="sg-label">Operations & Tooling</p>
+        <div class="tags">
+          <span class="tag t-dim">Asana</span>
+          <span class="tag t-dim">Slack</span>
+          <span class="tag t-dim">Typeform</span>
+          <span class="tag t-dim">Google Cloud</span>
         </div>
       </div>
 
@@ -634,49 +609,53 @@
 <section id="credentials">
   <div class="inner">
     <p class="sec-label">// background</p>
-    <h2>Education & Credentials.</h2>
+    <h2>Education & credentials.</h2>
+
+    <p style="font-size:0.85rem;color:var(--text2);margin-bottom:1.5rem;line-height:1.7;">
+      Started at <strong style="color:var(--text)">St. Joseph's College, Colombo</strong> — led the ICT Society, ran the school radio station (FM Joes), and represented the college at Model United Nations.
+      Good foundations for the work that came after.
+    </p>
+
     <div class="cred-grid reveal">
 
       <div class="cred-card">
         <div class="cred-icon">🎓</div>
-        <p class="cred-name">BSc (Hons) Computing Information Systems</p>
-        <p class="cred-sub">First Class — University of Greenwich</p>
+        <div class="cred-text">
+          <p class="cred-name">BSc (Hons) Computing Information Systems</p>
+          <p class="cred-sub">First Class Honours — University of Greenwich</p>
+        </div>
       </div>
 
       <div class="cred-card">
         <div class="cred-icon">📘</div>
-        <p class="cred-name">MBA</p>
-        <p class="cred-sub">Postgraduate Institute of Management, Sri Jayewardenepura</p>
+        <div class="cred-text">
+          <p class="cred-name">MBA</p>
+          <p class="cred-sub">Postgraduate Institute of Management, Sri Jayewardenepura</p>
+        </div>
       </div>
 
       <div class="cred-card">
         <div class="cred-icon">📗</div>
-        <p class="cred-name">MSc Information Technology</p>
-        <p class="cred-sub">SLIIT</p>
-      </div>
-
-      <div class="cred-card">
-        <div class="cred-icon">🏫</div>
-        <p class="cred-name">St. Joseph's College, Colombo</p>
-        <p class="cred-sub">G.C.E. A/L · ICT Society President · Media Circle · FM Joes · MUN</p>
+        <div class="cred-text">
+          <p class="cred-name">MSc Information Technology</p>
+          <p class="cred-sub">SLIIT — Reading</p>
+        </div>
       </div>
 
       <div class="cred-card">
         <div class="cred-icon">☁️</div>
-        <p class="cred-name">Google Cloud Digital Leader</p>
-        <p class="cred-sub">Certified</p>
+        <div class="cred-text">
+          <p class="cred-name">Google Cloud Digital Leader</p>
+          <p class="cred-sub">Certified</p>
+        </div>
       </div>
 
       <div class="cred-card">
         <div class="cred-icon">📈</div>
-        <p class="cred-name">Advanced Google Analytics</p>
-        <p class="cred-sub">Certified</p>
-      </div>
-
-      <div class="cred-card">
-        <div class="cred-icon">⚡</div>
-        <p class="cred-name">Six Sigma Yellow Belt</p>
-        <p class="cred-sub">Certified</p>
+        <div class="cred-text">
+          <p class="cred-name">Advanced Google Analytics</p>
+          <p class="cred-sub">Certified</p>
+        </div>
       </div>
 
     </div>
@@ -689,13 +668,13 @@
 <section id="contact">
   <div class="inner">
     <p class="sec-label">// contact</p>
-    <h2>Let's work together.</h2>
+    <h2>Let's talk.</h2>
     <p class="contact-desc">
-      Based in Colombo, Sri Lanka. Working globally.<br/>
-      Open to conversations, collaborations, and problems worth solving.
+      Based in Colombo, Sri Lanka — working globally.<br/>
+      Open to interesting conversations, projects, and collaborations.
     </p>
     <div class="socials">
-      <a href="https://delanofernando.com" class="social">
+      <a href="https://delanofernando.com" class="social primary">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
         delanofernando.com
       </a>
@@ -716,18 +695,18 @@
 </section>
 
 <footer>
-  <span>delano fernando &nbsp;·&nbsp; <span id="yr"></span> &nbsp;·&nbsp; colombo, sri lanka</span>
+  delano fernando &nbsp;·&nbsp; <span id="yr"></span> &nbsp;·&nbsp; colombo, sri lanka
 </footer>
 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
 
-  // Typing
+  // Typing animation
   const phrases = [
-    'I connect systems that drive revenue.',
-    'I turn messy data into clear decisions.',
-    'I build automation that actually scales.',
-    'I bridge the gap between code and strategy.',
+    'Marketing Operations Specialist.',
+    'CRM & Automation Engineer.',
+    'Data & Attribution Analyst.',
+    'Systems thinker.',
   ];
   let pi = 0, ci = 0, del = false;
   const el = document.getElementById('typed');
@@ -742,13 +721,13 @@
     }
     setTimeout(type, del ? 35 : 65);
   }
-  setTimeout(type, 600);
+  setTimeout(type, 500);
 
   // Scroll reveal
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.08 });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  document.querySelectorAll('.reveal').forEach(e => obs.observe(e));
 
   // Particle canvas
   const canvas = document.getElementById('bg-canvas');
@@ -759,22 +738,19 @@
     W = canvas.width = window.innerWidth;
     H = canvas.height = window.innerHeight;
   }
-
   function init() {
     pts = [];
-    const n = Math.floor((W * H) / 20000);
+    const n = Math.min(Math.floor((W * H) / 22000), 60);
     for (let i = 0; i < n; i++) {
       pts.push({
-        x: Math.random() * W,
-        y: Math.random() * H,
-        vx: (Math.random() - 0.5) * 0.2,
-        vy: (Math.random() - 0.5) * 0.2,
-        r: Math.random() * 1.5 + 0.5,
-        a: Math.random() * 0.5 + 0.2,
+        x: Math.random() * W, y: Math.random() * H,
+        vx: (Math.random() - 0.5) * 0.18,
+        vy: (Math.random() - 0.5) * 0.18,
+        r: Math.random() * 1.4 + 0.4,
+        a: Math.random() * 0.4 + 0.15,
       });
     }
   }
-
   function draw() {
     ctx.clearRect(0, 0, W, H);
     pts.forEach(p => {
@@ -782,7 +758,7 @@
       p.y = (p.y + p.vy + H) % H;
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(88,166,255,${p.a})`;
+      ctx.fillStyle = `rgba(0,119,255,${p.a})`;
       ctx.fill();
     });
     for (let i = 0; i < pts.length; i++) {
@@ -790,11 +766,11 @@
         const dx = pts[i].x - pts[j].x;
         const dy = pts[i].y - pts[j].y;
         const d = Math.sqrt(dx * dx + dy * dy);
-        if (d < 130) {
+        if (d < 140) {
           ctx.beginPath();
           ctx.moveTo(pts[i].x, pts[i].y);
           ctx.lineTo(pts[j].x, pts[j].y);
-          ctx.strokeStyle = `rgba(88,166,255,${0.07 * (1 - d / 130)})`;
+          ctx.strokeStyle = `rgba(0,119,255,${0.06 * (1 - d / 140)})`;
           ctx.lineWidth = 0.5;
           ctx.stroke();
         }
@@ -802,7 +778,6 @@
     }
     requestAnimationFrame(draw);
   }
-
   resize(); init(); draw();
   window.addEventListener('resize', () => { resize(); init(); });
 </script>
