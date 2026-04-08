@@ -43,7 +43,7 @@
       position: fixed;
       inset: 0;
       z-index: 0;
-      opacity: 0.3;
+      opacity: 0.55;
       pointer-events: none;
     }
 
@@ -738,46 +738,83 @@
     W = canvas.width = window.innerWidth;
     H = canvas.height = window.innerHeight;
   }
+
   function init() {
     pts = [];
-    const n = Math.min(Math.floor((W * H) / 22000), 60);
-    for (let i = 0; i < n; i++) {
+
+    // Large, slow glowing orbs
+    const nLarge = Math.min(Math.floor((W * H) / 90000), 10);
+    for (let i = 0; i < nLarge; i++) {
       pts.push({
-        x: Math.random() * W, y: Math.random() * H,
-        vx: (Math.random() - 0.5) * 0.18,
-        vy: (Math.random() - 0.5) * 0.18,
-        r: Math.random() * 1.4 + 0.4,
-        a: Math.random() * 0.4 + 0.15,
+        x: Math.random() * W,
+        y: Math.random() * H,
+        vx: (Math.random() - 0.5) * 0.1,
+        vy: (Math.random() - 0.5) * 0.1,
+        r: Math.random() * 7 + 5,       // 5–12px
+        a: Math.random() * 0.12 + 0.1,  // 0.10–0.22 — visible but soft
+        large: true,
+      });
+    }
+
+    // Small particles — the original connective tissue
+    const nSmall = Math.min(Math.floor((W * H) / 16000), 80);
+    for (let i = 0; i < nSmall; i++) {
+      pts.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        vx: (Math.random() - 0.5) * 0.22,
+        vy: (Math.random() - 0.5) * 0.22,
+        r: Math.random() * 1.6 + 0.6,   // 0.6–2.2px
+        a: Math.random() * 0.25 + 0.15, // 0.15–0.40
+        large: false,
       });
     }
   }
+
   function draw() {
     ctx.clearRect(0, 0, W, H);
+
     pts.forEach(p => {
       p.x = (p.x + p.vx + W) % W;
       p.y = (p.y + p.vy + H) % H;
+
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(0,119,255,${p.a})`;
-      ctx.fill();
+
+      if (p.large) {
+        ctx.shadowBlur = 22;
+        ctx.shadowColor = `rgba(0,119,255,0.45)`;
+        ctx.fillStyle = `rgba(0,119,255,${p.a})`;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      } else {
+        ctx.fillStyle = `rgba(0,119,255,${p.a})`;
+        ctx.fill();
+      }
     });
+
+    // Connections
     for (let i = 0; i < pts.length; i++) {
       for (let j = i + 1; j < pts.length; j++) {
         const dx = pts[i].x - pts[j].x;
         const dy = pts[i].y - pts[j].y;
         const d = Math.sqrt(dx * dx + dy * dy);
-        if (d < 140) {
+        const range = pts[i].large || pts[j].large ? 200 : 150;
+        if (d < range) {
+          const alpha = (pts[i].large || pts[j].large ? 0.1 : 0.07) * (1 - d / range);
           ctx.beginPath();
           ctx.moveTo(pts[i].x, pts[i].y);
           ctx.lineTo(pts[j].x, pts[j].y);
-          ctx.strokeStyle = `rgba(0,119,255,${0.06 * (1 - d / 140)})`;
-          ctx.lineWidth = 0.5;
+          ctx.strokeStyle = `rgba(0,119,255,${alpha})`;
+          ctx.lineWidth = pts[i].large || pts[j].large ? 0.8 : 0.4;
           ctx.stroke();
         }
       }
     }
+
     requestAnimationFrame(draw);
   }
+
   resize(); init(); draw();
   window.addEventListener('resize', () => { resize(); init(); });
 </script>
